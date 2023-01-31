@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 30px;
+  padding: 80px 175px;
+  background-color: hsl(226, 43%, 10%);
+}
+@media (max-width: 991px) {
+  .wrapper {
+    padding: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper {
+    display: block;
+    padding: 50px 30px;
+  }
+  .wrapper > div:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+.wrapper .profile {
+  grid-row: span 2;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 15px;
+}
+.wrapper .profile .info {
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 15px;
+  padding: 35px;
+}
+@media (max-width: 767px) {
+  .wrapper .profile .info {
+    display: flex;
+    align-items: center;
+  }
+}
+.wrapper .profile .info img {
+  width: 90px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .wrapper .profile .info img {
+    margin-bottom: 0;
+    margin-right: 25px;
+  }
+}
+.wrapper .profile .info span {
+  display: block;
+  font-size: 16px;
+  color: hsl(236, 100%, 87%);
+  margin-bottom: 3px;
+}
+.wrapper .profile .info h1 {
+  font-size: 43px;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .wrapper .profile .info h1 {
+    margin-bottom: 0;
+    font-size: 30px;
+  }
+}
+.wrapper .profile ul {
+  list-style: none;
+  padding: 30px 35px;
+}
+@media (max-width: 767px) {
+  .wrapper .profile ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.wrapper .profile ul li {
+  color: hsl(235, 45%, 61%);
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.wrapper .profile ul li:not(:last-child) {
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .wrapper .profile ul li:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+.wrapper .profile ul li:hover,
+.wrapper .profile ul li.active {
+  color: white;
+}
+.wrapper .card {
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  padding: 80px 35px 35px;
+  cursor: pointer;
+}
+.wrapper .card::before {
+  content: "";
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  z-index: -2;
+  border-radius: 15px;
+}
+.wrapper .card::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 50px);
+  z-index: -1;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.wrapper .card:hover::after {
+  background-color: hsl(235deg 46% 36%);
+}
+.wrapper .work::before {
+  background-image: url(images/icon-work.svg);
+  background-position: 173px -8px;
+  background-color: hsl(15, 100%, 70%);
+}
+.wrapper .play::before {
+  background-position: 171px -5px;
+  background-image: url(images/icon-play.svg);
+  background-color: hsl(195, 74%, 62%);
+}
+.wrapper .study::before {
+  background-position: 171px -5px;
+  background-image: url(images/icon-study.svg);
+  background-color: hsl(348, 100%, 68%);
+}
+.wrapper .exercise::before {
+  background-position: 171px 2px;
+  background-image: url(images/icon-exercise.svg);
+  background-color: hsl(145, 58%, 55%);
+}
+.wrapper .social::before {
+  background-position: 182px -12px;
+  background-image: url(images/icon-social.svg);
+  background-color: hsl(264, 64%, 52%);
+}
+.wrapper .self-care::before {
+  background-position: 188px -8px;
+  background-image: url(images/icon-self-care.svg);
+  background-color: hsl(43, 84%, 65%);
+}
+.wrapper .card .card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+@media (max-width: 767px) {
+  .wrapper .card .text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.wrapper .card .card-heading h4 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+.wrapper .card .card-heading img {
+  width: 20px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.wrapper .card .card-heading img:hover {
+  opacity: 1;
+}
+.wrapper .card h1 {
+  color: white;
+  font-weight: 300;
+  font-size: 58px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .wrapper .card h1 {
+    font-size: 35px;
+    margin-bottom: 0;
+  }
+}
+.wrapper .card p {
+  color: hsl(235, 45%, 61%);
+  font-size: 16px;
+}
